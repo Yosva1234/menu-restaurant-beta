@@ -72,7 +72,7 @@ footer {
 
 .menu li a {
   display: block;
-  padding: 10px 20px;
+  padding: 7px 5px;
   color: white;
   text-decoration: none;
 }
@@ -81,15 +81,3 @@ footer {
   background-color: #555;
 }
 
-.menu li:hover .submenu {
-  display: block;
-}
-
-.submenu li a {
-  padding: 10px;
-  color: white;
-}
-
-.submenu li a:hover {
-  background-color: #666;
-}
