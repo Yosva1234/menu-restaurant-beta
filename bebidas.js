@@ -24,7 +24,7 @@ const bebidas = [
       platoElement.classList.add("plato");
   
       platoElement.innerHTML = `
-        <h3>${plato.nombre + " --- "} <p> $${plato.precio.toFixed(2)}</p>  <img src = ${plato.image}></h3>
+        <h3>${plato.nombre + " ------- " + plato.precio.toFixed(2)}  <img src = ${plato.image}></h3>
         
         
       `;
