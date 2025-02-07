@@ -24,7 +24,7 @@ main {
 
 #platos-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
 }
 
@@ -79,5 +79,11 @@ footer {
 
 .menu li a:hover {
   background-color: #555;
+}
+
+  h1 
+  {
+    font-family: 'Lato', sans-serif; /* Aplica la fuente Lato */
+    font-weight: 700; /* Negrita para el h1 */
 }
 
