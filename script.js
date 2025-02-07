@@ -1,6 +1,6 @@
 // Lista de platos (puedes modificarla o cargarla desde una API)
 const platos = [
-  { nombre: "Ensalada César", precio: 8.50 },
+  { nombre: "Ensalada César", precio: 8.50,  },
   { nombre: "Pizza Margarita", precio: 10.00 },
   { nombre: "Hamburguesa Clásica", precio: 9.00 },
   { nombre: "Sushi Variado", precio: 15.00 },
