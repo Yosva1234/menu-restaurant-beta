@@ -1,30 +1,32 @@
-
+// Lista de bebidas
 const bebidas = [
-    { nombre: " cerveza ", precio: 8.50, image:"fotosbebidas/descarga.png", descripcion:"una bebida energizante"},
-    {nombre : "bebida 2" , precio: 1.928}
-  ]
+  { nombre: "Cerveza", precio: 8.50, image: "fotosbebidas/descarga.png", descripcion: "Una bebida energizante" },
+  { nombre: "Bebida 2", precio: 1.928, image: "", descripcion: "" } // Agrega una imagen y descripción si es necesario
+];
 
-  // Lista de platos (puedes modificarla o cargarla desde una API)
-  // Función para mostrar los platos en la página
-  function mostrarPlatos() {
-    const platosContainer = document.getElementById("platos-container");
-  
-    // Limpia el contenedor antes de agregar los platos
-    platosContainer.innerHTML = "";
-  
-    // Recorre la lista de platos y crea un elemento para cada uno
-    bebidas.forEach((plato) => {
-      const platoElement = document.createElement("div");
-      platoElement.classList.add("plato");
-  
-      platoElement.innerHTML = `
-        <h3>${plato.nombre + " ------- " + plato.precio.toFixed(2)}  <img src = ${plato.image}></h3>
-        <h4>${plato.descripcion}</h4>
-      `;
-  
-      platosContainer.appendChild(platoElement);
-    });
-  }
-  
-  // Llama a la función para mostrar los platos cuando la página se cargue
-  window.onload = mostrarPlatos;
+// Función para mostrar las bebidas en la página
+function mostrarPlatos() {
+  const platosContainer = document.getElementById("platos-container");
+
+  // Limpia el contenedor antes de agregar las bebidas
+  platosContainer.innerHTML = "";
+
+  // Recorre la lista de bebidas y crea un elemento para cada una
+  bebidas.forEach((plato) => {
+    const platoElement = document.createElement("div");
+    platoElement.classList.add("plato");
+
+    // Construye el contenido HTML para cada bebida
+    platoElement.innerHTML = `
+      <h3>${plato.nombre} - $${plato.precio.toFixed(2)}</h3>
+      ${plato.image ? `<img src="${plato.image}" alt="${plato.nombre}">` : ''}
+      ${plato.descripcion ? `<h4>${plato.descripcion}</h4>` : ''}
+    `;
+
+    // Agrega el elemento al contenedor
+    platosContainer.appendChild(platoElement);
+  });
+}
+
+// Llama a la función para mostrar las bebidas cuando la página se cargue
+window.onload = mostrarPlatos;
