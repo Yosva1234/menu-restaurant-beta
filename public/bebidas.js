@@ -29,3 +29,4 @@ function mostrarPlatos() {
 
 // Llama a la función para mostrar las bebidas cuando la página se cargue
 window.onload = mostrarPlatos;
+
