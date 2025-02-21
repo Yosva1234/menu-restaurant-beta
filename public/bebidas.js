@@ -1,17 +1,4 @@
 
-
-const fs = require('fs');
-
-fs.readFile('bebidas.txt', 'utf8', (err, data) => {
-    if (err) {
-        console.error('Error reading the file:', err);
-        return;
-    }
-    const fileContent = data;
-    console.log(fileContent);
-});
-
-
 const bebidas = [
     { nombre: " cerveza ", precio: 8.50, image:"fotosbebidas/descarga.png", descripcion:"una bebida energizante"},
   ]
