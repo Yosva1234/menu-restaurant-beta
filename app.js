@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
 });
 
 // Ruta de ejemplo: obtener datos de la base de datos
-app.get('/usuarios', (req, res) => {
+app.get('/bebidas', (req, res) => {
   const query = 'SELECT * FROM bebidas'; // Cambia "usuarios" por el nombre de tu tabla
 
   connection.query(query, (err, results) => {
