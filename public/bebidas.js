@@ -1,6 +1,7 @@
 
 const bebidas = [
     { nombre: " cerveza ", precio: 8.50, image:"fotosbebidas/descarga.png", descripcion:"una bebida energizante"},
+    {nombre : "bebida 2" , precio: 1.928}
   ]
 
   // Lista de platos (puedes modificarla o cargarla desde una API)
