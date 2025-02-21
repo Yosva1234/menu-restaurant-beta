@@ -1,7 +1,7 @@
 // Lista de bebidas
 const bebidas = [
-  { nombre: "Cerveza", precio: 8.50, image: "fotosbebidas/descarga.png", descripcion: "Una bebida energizante" },
-  { nombre: "Bebida 2", precio: 1.928, image: "", descripcion: "" } // Agrega una imagen y descripción si es necesario
+  { nombre: "Cerveza", precio: 8.50, descripcion: "Una bebida energizante" },
+  { nombre: "Bebida 2", precio: 1.928, descripcion: "yy" } // Agrega una imagen y descripción si es necesario
 ];
 
 // Función para mostrar las bebidas en la página
@@ -19,7 +19,6 @@ function mostrarPlatos() {
     // Construye el contenido HTML para cada bebida
     platoElement.innerHTML = `
       <h3>${plato.nombre} - $${plato.precio.toFixed(2)}</h3>
-      ${plato.image ? `<img src="${plato.image}" alt="${plato.nombre}">` : ''}
       ${plato.descripcion ? `<h4>${plato.descripcion}</h4>` : ''}
     `;
 
