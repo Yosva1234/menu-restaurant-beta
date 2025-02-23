@@ -33,11 +33,11 @@ document.getElementById('uploadForm').addEventListener('submit', async (e) => {
       const producto = {
         nombre,
         precio: parseFloat(precio),
-        informacion,
+        info,
         imagen: imageUrl,
       };
   
-      const saveResponse =  fetch('/bebidas', {
+      const saveResponse = await fetch('/bebidas', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
