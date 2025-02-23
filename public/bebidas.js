@@ -1,11 +1,5 @@
-// Lista de bebidas
-const bebidas = [
-  { nombre: "Cerveza", precio: 8.50, descripcion: "Una bebida energizante" },
-  { nombre: "Bebida 2", precio: 1.928, descripcion: "yy" } // Agrega una imagen y descripción si es necesario
-];
-
 // Función para mostrar las bebidas en la página
-function mostrarPlatos() {
+function mostrarPlatos(bebidas) {
   const platosContainer = document.getElementById("platos-container");
 
   // Limpia el contenedor antes de agregar las bebidas
@@ -27,6 +21,24 @@ function mostrarPlatos() {
   });
 }
 
-// Llama a la función para mostrar las bebidas cuando la página se cargue
-window.onload = mostrarPlatos;
+// Función para obtener las bebidas desde el servidor
+function obtenerBebidas() {
+  fetch('/bebidas') // Hace una solicitud GET a la ruta /bebidas
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Error al obtener los datos');
+      }
+      return response.json(); // Convierte la respuesta a JSON
+    })
+    .then(data => {
+      // Llama a la función para mostrar las bebidas con los datos obtenidos
+      mostrarPlatos(data);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('Hubo un error al cargar los datos de las bebidas');
+    });
+}
 
+// Llama a la función para obtener las bebidas cuando la página se cargue
+window.onload = obtenerBebidas;
