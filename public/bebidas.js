@@ -13,7 +13,7 @@ function mostrarPlatos(bebidas) {
     // Construye el contenido HTML para cada bebida
     platoElement.innerHTML = `
       <h3>${plato.nombre} - $${plato.precio.toFixed(2)}</h3>
-      ${plato.descripcion ? `<h4>${plato.descripcion}</h4>` : ''}
+      ${plato.info ? `<h4>${plato.info}</h4>` : ''}
     `;
 
     // Agrega el elemento al contenedor
