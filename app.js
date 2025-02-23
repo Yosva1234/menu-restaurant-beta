@@ -46,7 +46,7 @@ app.get('/bebidas', (req, res) => {
 
 // Ruta para agregar una nueva bebida
 app.post('/bebidas', (req, res) => {
-  const { nombre, precio, descripcion, imagen } = req.body; // Obtener los datos del cuerpo de la solicitud
+  const { nombre, precio, info, imagen } = req.body; // Obtener los datos del cuerpo de la solicitud
 
   // Validar que todos los campos estén presentes
   if (!nombre || !precio || !info || !imagen) {
