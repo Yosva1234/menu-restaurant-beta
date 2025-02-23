@@ -37,7 +37,7 @@ document.getElementById('uploadForm').addEventListener('submit', async (e) => {
         imagen: imageUrl,
       };
   
-      const saveResponse = await fetch('/guardar-producto', {
+      const saveResponse = await fetch('/bebidas', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
