@@ -135,3 +135,28 @@ footer {
     padding: 6px 12px; /* Padding más pequeño */
   }
 }
+
+
+/* Estilos para el botón de agregar */
+.add-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #28a745; /* Color verde */
+  color: white;
+  border: none;
+  border-radius: 50%; /* Hace el botón circular */
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none; /* Quita el subrayado del enlace */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #218838; /* Color verde más oscuro al pasar el mouse */
+}

@@ -44,6 +44,29 @@ app.get('/bebidas', (req, res) => {
   });
 });
 
+// Ruta para agregar una nueva bebida
+app.post('/bebidas', (req, res) => {
+  const { nombre, precio, descripcion, imagen } = req.body; // Obtener los datos del cuerpo de la solicitud
+
+  // Validar que todos los campos estén presentes
+  if (!nombre || !precio || !descripcion || !imagen) {
+    return res.status(400).json({ error: 'Todos los campos son obligatorios.' });
+  }
+
+  const query = 'INSERT INTO bebidas (nombre, precio, descripcion, imagen) VALUES (?, ?, ?, ?)'; // Consulta para insertar una nueva bebida
+
+  // Usar el pool para ejecutar la consulta
+  pool.query(query, [nombre, precio, descripcion, imagen], (err, results) => {
+    if (err) {
+      console.error('Error al agregar la bebida:', err.stack);
+      return res.status(500).json({ error: 'Error en el servidor' });
+    }
+
+    // Respuesta exitosa con el ID de la nueva bebida
+    res.status(201).json({ message: 'Bebida agregada correctamente', id: results.insertId });
+  });
+});
+
 // Ruta para eliminar una bebida por su ID
 app.delete('/bebidas/:id', (req, res) => {
   const { id } = req.params; // Obtener el ID de la bebida desde los parámetros de la URL
