@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const mysql = require('mysql2'); // Importar mysql2
+const cors = require('cors'); // Para permitir solicitudes desde el frontend
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -16,15 +17,9 @@ const pool = mysql.createPool({
   queueLimit: 0 // Número máximo de solicitudes en cola (0 = sin límite)
 });
 
-// Verificar la conexión al pool
-pool.getConnection((err, connection) => {
-  if (err) {
-    console.error('Error al conectar a la base de datos:', err.stack);
-    return;
-  }
-  console.log('Conectado a la base de datos MySQL.');
-  connection.release(); // Liberar la conexión al pool
-});
+// Middleware
+app.use(cors()); // Permitir solicitudes desde el frontend
+app.use(express.json()); // Para parsear el cuerpo de las solicitudes JSON
 
 // Servir archivos estáticos desde la carpeta "public"
 app.use(express.static(path.join(__dirname, 'public')));
@@ -34,9 +29,9 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Ruta de ejemplo: obtener datos de la base de datos
+// Ruta para obtener todas las bebidas
 app.get('/bebidas', (req, res) => {
-  const query = 'SELECT * FROM bebidas'; // Cambia "usuarios" por el nombre de tu tabla
+  const query = 'SELECT * FROM bebidas'; // Consulta para obtener todas las bebidas
 
   // Usar el pool para ejecutar la consulta
   pool.query(query, (err, results) => {
@@ -46,6 +41,30 @@ app.get('/bebidas', (req, res) => {
       return;
     }
     res.json(results); // Enviar los resultados como JSON
+  });
+});
+
+// Ruta para eliminar una bebida por su ID
+app.delete('/bebidas/:id', (req, res) => {
+  const { id } = req.params; // Obtener el ID de la bebida desde los parámetros de la URL
+
+  const query = 'DELETE FROM bebidas WHERE id = ?'; // Consulta para eliminar la bebida
+
+  // Usar el pool para ejecutar la consulta
+  pool.query(query, [id], (err, results) => {
+    if (err) {
+      console.error('Error al eliminar la bebida:', err.stack);
+      res.status(500).send('Error en el servidor');
+      return;
+    }
+
+    if (results.affectedRows === 0) {
+      // Si no se eliminó ninguna fila, la bebida no existe
+      res.status(404).json({ error: 'Bebida no encontrada' });
+      return;
+    }
+
+    res.json({ message: 'Bebida eliminada correctamente' }); // Respuesta exitosa
   });
 });
 
