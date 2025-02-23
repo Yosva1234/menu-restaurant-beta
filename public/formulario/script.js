@@ -3,7 +3,7 @@ document.getElementById('uploadForm').addEventListener('submit', async (e) => {
   
     const nombre = document.getElementById('nombre').value;
     const precio = document.getElementById('precio').value;
-    const informacion = document.getElementById('informacion').value;
+    const info = document.getElementById('info').value;
     const fileInput = document.getElementById('imageInput');
     const file = fileInput.files[0];
   
