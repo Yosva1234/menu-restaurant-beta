@@ -1,3 +1,4 @@
+/* Estilos generales */
 body {
   font-family: Arial, sans-serif;
   background-color: #f9f9f9;
@@ -9,44 +10,59 @@ body {
 header {
   background-color: #b7a112;
   color: white;
-  padding: 10px;
+  padding: 20px;
   text-align: center;
+  position: relative; /* Necesario para posicionar el botón */
 }
 
+/* Estilos del botón de Login */
+.login-button {
+  position: absolute; /* Posiciona el botón de forma absoluta */
+  top: 10px; /* Distancia desde la parte superior */
+  left: 10px; /* Distancia desde la izquierda */
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.login-button:hover {
+  background-color: #555; /* Cambia el color al pasar el mouse */
+}
+
+/* Estilos del contenido principal */
 main {
   padding: 20px;
   margin-bottom: 60px; /* Margen inferior para el footer */
 }
 
-#menu {
-  max-width: 100%;
-  margin: 0 auto;
-}
-
 #platos-container {
-  display: block; /* Cambia grid a block */
+  display: block;
 }
 
 .plato {
   background-color: rgb(255, 255, 255);
-  border: 1px solid #ddd; /* Borde más visible */
+  border: 1px solid #ddd;
   border-radius: 8px;
   padding: 15px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra más suave */
-  margin-bottom: 20px; /* Espacio entre platos */
-  width: 100%; /* Ocupa todo el ancho */
-  box-sizing: border-box; /* Incluye padding y border en el ancho */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .plato h3 {
-  margin: 0 0 10px; /* Más espacio debajo del título */
+  margin: 0 0 10px;
   font-size: 1.5em;
   color: #000000;
 }
 
 .plato p {
   margin: 0;
-  font-size: 1.2em; /* Tamaño de fuente un poco más pequeño */
+  font-size: 1.2em;
   color: #555;
 }
 
@@ -55,35 +71,96 @@ footer {
   color: white;
   text-align: center;
   padding: 10px;
-  position: relative; /* Cambia fixed a relative */
+  position: relative;
   width: 100%;
 }
 
-/* Estilos generales del menú */
-.menu {
-  list-style: none;
-  padding: 0;
+
+
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
   margin: 0;
-  background-color: #333;
+  padding: 0;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.menu li {
-  position: relative;
+/* Contenedor del formulario */
+.login-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
 }
 
-.menu li a {
+.login-container h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Estilos del formulario */
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
   display: block;
-  padding: 7px 5px;
-  color: white;
-  text-decoration: none;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
 }
 
-.menu li a:hover {
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.form-group input:focus {
+  border-color: #333;
+  outline: none;
+}
+
+/* Estilos del botón */
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
   background-color: #555;
 }
 
-h1 {
-  font-family: 'Lato', sans-serif; /* Aplica la fuente Lato */
-  font-weight: 700; /* Negrita para el h1 */
+/* Enlace de registro */
+.register-link {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #555;
+}
+
+.register-link a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
 }

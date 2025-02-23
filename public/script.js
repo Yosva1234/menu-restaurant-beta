@@ -40,5 +40,9 @@ function obtenerBebidas() {
     });
 }
 
+function redirectToLogin() {
+  window.location.href = "login.html"; // Redirige a login.html
+}
+
 // Llama a la función para obtener las bebidas cuando la página se cargue
 window.onload = obtenerBebidas;
