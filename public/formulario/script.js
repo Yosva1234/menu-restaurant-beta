@@ -7,7 +7,7 @@ document.getElementById('uploadForm').addEventListener('submit', async (e) => {
     const fileInput = document.getElementById('imageInput');
     const file = fileInput.files[0];
   
-    if (!nombre || !precio || !informacion || !file) {
+    if (!nombre || !precio || !info || !file) {
       alert('Por favor, completa todos los campos.');
       return;
     }
