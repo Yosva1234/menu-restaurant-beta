@@ -12,6 +12,7 @@ function mostrarPlatos(bebidas) {
 
     // Construye el contenido HTML para cada bebida
     platoElement.innerHTML = `
+      <img src="${plato.imagen}" alt="${plato.nombre}" class="plato-imagen">
       <h3>${plato.nombre} - $${plato.precio.toFixed(2)}</h3>
       ${plato.info ? `<h4>${plato.info}</h4>` : ''}
     `;
