@@ -48,7 +48,7 @@ header {
 /* Estilos del contenido principal */
 main {
   padding: 5%;
-  margin-bottom: 60%; /* Margen inferior para el footer */
+  margin-bottom: 2%; /* Margen inferior para el footer */
 }
 
 /* Contenedor de las bebidas */
@@ -56,6 +56,7 @@ main {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 columnas */
   gap: 10px; /* Espacio entre las bebidas */
+  background-color: transparent; /* Fondo transparente */
 }
 
 /* Estilos de cada bebida */
