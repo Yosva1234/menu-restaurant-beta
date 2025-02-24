@@ -34,8 +34,8 @@ header {
 
 /* Estilos del contenido principal */
 main {
-  padding: 20px;
-  margin-bottom: 60px; /* Margen inferior para el footer */
+  padding: 0px;
+  margin-bottom: 80%; /* Margen inferior para el footer */
 }
 
 /* Contenedor de las bebidas */
