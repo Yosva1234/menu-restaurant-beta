@@ -127,7 +127,7 @@ footer {
 
 @media (max-width: 480px) {
   #platos-container {
-    grid-template-columns: 1fr; /* Una sola columna en pantallas muy pequeñas */
+    grid-template-columns: repeat(2, 1fr); /* Asegura que haya 2 columnas en pantallas pequeñas */
   }
 
   .plato h3 {
