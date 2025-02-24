@@ -2,14 +2,27 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f9;
-  margin: 0;
+  margin: 5px;
   padding: 20px;
 }
 
+body, html {
+  margin: 0;     /* Elimina los márgenes predeterminados */
+  padding: 0;    /* Elimina el padding predeterminado */
+  box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho y alto total */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 header {
-  background-color: #b7a112;
+  background-color: #6b6332;
   color: white;
-  padding: 20px;
+  padding: 15px;
   text-align: center;
   position: relative; /* Necesario para posicionar el botón */
 }
@@ -34,8 +47,8 @@ header {
 
 /* Estilos del contenido principal */
 main {
-  padding: 0px;
-  margin-bottom: 80%; /* Margen inferior para el footer */
+  padding: 5%;
+  margin-bottom: 60%; /* Margen inferior para el footer */
 }
 
 /* Contenedor de las bebidas */
