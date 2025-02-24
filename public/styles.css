@@ -61,7 +61,7 @@ main {
 
 /* Estilos de cada bebida */
 .plato {
-  background-color: white;
+  background-color:transparent;
   border-radius: 2px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 0px;
