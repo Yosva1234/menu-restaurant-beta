@@ -42,15 +42,15 @@ main {
 #platos-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 columnas */
-  gap: 0px; /* Espacio entre las bebidas */
+  gap: 10px; /* Espacio entre las bebidas */
 }
 
 /* Estilos de cada bebida */
 .plato {
   background-color: white;
-  border-radius: 10px;
+  border-radius: 2px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 15px;
+  padding: 0px;
   text-align: center;
 }
 
