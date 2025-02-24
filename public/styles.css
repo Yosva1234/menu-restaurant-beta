@@ -56,7 +56,7 @@ main {
 
 .plato-imagen {
   width: 100%; /* La imagen ocupa el 100% del ancho del contenedor */
-  height: auto; /* La altura se ajusta automáticamente */
+  height: 100%; /* La altura se ajusta automáticamente */
   border-radius: 10px;
   object-fit: cover; /* Asegura que la imagen se ajuste correctamente */
 }
