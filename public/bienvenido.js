@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const platosContainer = document.getElementById('platos-container');
-  
+     
     // Función para cargar las bebidas
     function cargarBebidas() {
       fetch('/bebidas') // Hacer una solicitud GET a la ruta /bebidas

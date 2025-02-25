@@ -53,6 +53,8 @@ document.getElementById('uploadForm').addEventListener('submit', async (e) => {
       if (saveResponse.ok) {
           document.getElementById('message').innerText = 'Producto guardado correctamente.';
           console.log('Producto guardado:', saveData);
+          window.location.href = "bienvenido.html";
+          
       } else {
           throw new Error('Error al guardar el producto.');
       }
